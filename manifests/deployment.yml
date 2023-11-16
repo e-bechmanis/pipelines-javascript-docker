@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ebechmanispipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ebechmanispipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: ebechmanispipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: ebechmanispipelinesjavascriptdocker 
+          image: ebechmaniscontainerregistry.azurecr.io/ebechmanispipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
